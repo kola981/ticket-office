@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        div {
+            margin: 20% 20%;
+        }
+        td {
+            border: 1px dotted black;
+            padding: 10px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div th:unless="${#lists.isEmpty(users)}">
+    <h3>USERS INFO:</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>USER ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+        </tr>
+        </thead>
+        <tbody th:each="user:${users}">
+        <tr>
+            <td th:text="${user.getId()}">1</td>
+            <td th:text="${user.getName()}">AAA</td>
+            <td th:text="${user.getEmail()}">aaa@aaa</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

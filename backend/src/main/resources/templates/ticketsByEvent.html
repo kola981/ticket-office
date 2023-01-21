@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        div {
+            margin: 20% 20%;
+        }
+        td {
+            border: 1px dotted black;
+            padding: 10px;
+            text-align:center;
+        }
+        .h{
+            border-bottom: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+<div th:unless="${#lists.isEmpty(tickets)}">
+    <h3>EVENT REPORT:</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${tickets[0].getTitle()}">BBB</td>
+            <td th:text="${tickets[0].getDate()}">2020-12-10 10:45</td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+    <h3>PURCHASED TICKETS:</h3>
+    <table>
+        <thead>
+        <tr>
+            <th class="h">ID</th>
+            <th class="h">EMAIL</th>
+            <th class="h">NAME</th>
+            <th class="h">PLACE</th>
+            <th class="h">CATEGORY</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ticket:${tickets}">
+            <td th:text="${ticket.getId()}">1</td>
+            <td th:text="${ticket.getEmail()}">aaa@aaa</td>
+            <td th:text="${ticket.getName()}">V.K.</td>
+            <td th:text="${ticket.getPlace()}">23</td>
+            <td th:text="${ticket.getCategory()}">PREMIUM</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

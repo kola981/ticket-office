@@ -1,9 +1,12 @@
 .idea
 *.iml
-.idea
 
-.gradle
-.gradle/*
-gradle/wrapper
+gradle/**
+.gradle/**
 gradlew
-gradlew.bat
+build/**
+.idea/**
+
+*.lock
+.gradle
+gradle

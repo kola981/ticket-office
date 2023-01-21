@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="facade" class="org.lab.facade.impl.BookingFacadeImpl">
+        <constructor-arg ref="userService"/>
+        <constructor-arg ref="eventService"/>
+        <constructor-arg ref="ticketService"/>
+        <constructor-arg ref="xmlReader"/>
+    </bean>
+
+    <bean id="userService" class="org.lab.service.impl.UserServiceImpl" autowire="byType"/>
+    <bean id="eventService" class="org.lab.service.impl.EventServiceImpl" autowire="byType"/>
+    <bean id="ticketService" class="org.lab.service.impl.TicketServiceImpl" autowire="byType"/>
+    <bean id="xmlReader" class="org.lab.service.impl.XmlReader" autowire="byType"/>
+    <bean id="unmarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller" autowire="byType"/>
+
+    <bean id="ticketDao" class="org.lab.dao.impl.TicketDaoImpl">
+        <property name="storage" ref="storage"/>
+        <property name="resolver" ref="resolver"/>
+    </bean>
+
+    <bean id="eventDao" class="org.lab.dao.impl.EventDaoImpl">
+        <property name="storage" ref="storage"/>
+        <property name="resolver" ref="resolver"/>
+    </bean>
+
+    <bean id="userDao" class="org.lab.dao.impl.UserDaoImpl">
+        <property name="storage" ref="storage"/>
+        <property name="resolver" ref="resolver"/>
+    </bean>
+
+    <bean id="filler" class="org.lab.repository.StorageFiller">
+        <property name="userDao" ref="userDao"/>
+        <property name="eventDao" ref="eventDao"/>
+        <property name="storage" ref="storage"/>
+    </bean>
+
+    <bean id="storage" class="org.lab.repository.Storage">
+        <property name="pathToFile" value="${data.file}"/>
+    </bean>
+
+    <bean class="org.lab.utils.StoragePostProcessor"/>
+
+    <bean id="resolver" class="org.lab.utils.NamespaceResolver"/>
+
+</beans>
