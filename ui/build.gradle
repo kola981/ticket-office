@@ -1,0 +1,30 @@
+plugins {
+  id "com.github.node-gradle.node" version "3.5.1"
+}
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  srcDir='./dist/ui'
+  targetDir=layout.getProjectDirectory().dir("../backend/src/main/resources/static")
+}
+
+node {
+    version = '16.10.0'
+    npmVersion = '7.24.0'
+    download = false
+}
+
+task buildNg(type: NpmTask) {
+  args = ["run", "build"]
+}
+
+tasks.register("copyUi", Copy){
+  dependsOn 'buildNg'
+  from srcDir
+  into targetDir
+}
+
+
