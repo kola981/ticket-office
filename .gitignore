@@ -1,12 +1,11 @@
 .idea
 *.iml
 
+.gradle
+*.lock
+
 gradle/**
 .gradle/**
 gradlew
 build/**
 .idea/**
-
-*.lock
-.gradle
-gradle
