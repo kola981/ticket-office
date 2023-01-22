@@ -25,6 +25,24 @@ dependencies {
     testImplementation('org.mockito:mockito-inline:4.1.0')
 }
 
+tasks.withType(JavaCompile).configureEach {
+    javaCompiler = javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+tasks.withType(Test).configureEach {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+tasks.withType(JavaExec).configureEach {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 test {
     useJUnitPlatform()
     testLogging {
@@ -51,8 +69,16 @@ jacocoTestReport {
     }
 }
 
-run {
-    // dependsOn(test)
+build {
+    dependsOn('test')
+}
+
+tasks.register("buildBackend", Task) {
+    dependsOn('test')
+    dependsOn('build')
+    dependsOn('run')
+    tasks.findByName('build').mustRunAfter('test')
+    tasks.findByName('run').mustRunAfter('build')
 }
 
 application {

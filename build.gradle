@@ -3,3 +3,22 @@ allprojects {
     version '1.0-SNAPSHOT'
 }
 
+tasks.register('buildAll') {
+    dependsOn 'buildUi'
+    dependsOn 'cleanBackend'
+    dependsOn 'buildBackend'
+    tasks.findByName('cleanBackend').mustRunAfter 'buildUi'
+    tasks.findByName('buildBackend').mustRunAfter 'cleanBackend'
+}
+
+tasks.register("buildUi") {
+    dependsOn gradle.includedBuild('ui').task(':buildUi')
+}
+
+tasks.register("buildBackend") {
+    dependsOn gradle.includedBuild('backend').task(':buildBackend')
+}
+
+tasks.register("cleanBackend") {
+    dependsOn gradle.includedBuild('backend').task(':clean')
+}

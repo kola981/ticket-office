@@ -12,19 +12,27 @@ ext {
 }
 
 node {
-    version = '16.10.0'
-    npmVersion = '7.24.0'
-    download = false
+//    version = '16.10.0'
+//    npmVersion = '7.24.0'
+//    download = false
 }
 
 task buildNg(type: NpmTask) {
+  def output = project.file('dist/ui')
+  outputs.dir output
+//  workingDir = "/home/ak981/.nvm/versions/node/v16.10.0/bin"
+//  executable = new File(workingDir, "npm")
   args = ["run", "build"]
 }
 
-tasks.register("copyUi", Copy){
+tasks.register("buildUi", Copy){
   dependsOn 'buildNg'
   from srcDir
   into targetDir
 }
 
+tasks.register("copyUi", Copy){
+  from srcDir
+  into targetDir
+}
 

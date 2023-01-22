@@ -1,5 +1,5 @@
 rootProject.name = 'ticket-office'
 
-include 'backend'
+includeBuild 'backend'
 includeBuild 'ui'
 
