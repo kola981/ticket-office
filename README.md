@@ -8,4 +8,7 @@ Used technologies:
 
 ### Building a project
 
-TODO
+1. Install Node 16.10.0
+2. Run ***npm install*** from **'./ui'** folder
+3. Run ***buildAll*** gradle task. The task will build ui and back and will run the project
+
