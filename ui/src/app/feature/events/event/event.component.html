@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="title-picture">
+        <div>{{ event?.title }}</div>
+        <img src="./assets/thumbnails/stub.jpg" class="picture">
+    </div>
+    <div class="date-description">
+        <div class="date"><mat-icon>calendar_month</mat-icon> {{ event?.date  }}</div> <!--| date:'d MMM YYYY'-->
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora quas deleniti, voluptates earum eaque aperiam eum commodi et obcaecati, nostrum dolorem placeat aliquam reiciendis maiores praesentium corrupti sequi consectetur. </p>
+    </div>
+    <div class="controls"> 
+        <button mat-raised-button color="accent" (click)="onClick()">Book Ticket</button>
+    </div> 
+</div>

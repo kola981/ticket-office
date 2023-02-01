@@ -1,0 +1,23 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+:host {
+    // @include container;
+    
+
+    .search-section {
+        @include flex-centered;
+        margin-top: 5%;
+        
+        .search {
+          //  padding-left: 25%;
+            max-width: 600px;
+            width: 60%;
+        }
+    }
+
+    .events {
+        margin-top: 5%;
+        padding: 0 10%;
+    }
+}

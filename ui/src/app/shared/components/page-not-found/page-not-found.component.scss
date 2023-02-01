@@ -1,0 +1,13 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/mixins.scss";
+
+:host {
+    @include flex-centered;
+    height: inherit;
+
+    .message {
+        font-size: 30px;
+        color: $warn;
+    }
+
+}

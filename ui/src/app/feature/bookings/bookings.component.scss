@@ -1,0 +1,30 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+
+:host {
+    @include flex-column-center;
+
+    h3 {
+        margin-top: 200px;
+        font-size: x-large;
+    }
+
+    div {
+        width: 60%;
+        margin-top: 40px;
+
+        table {
+            width: 100%;
+          }
+          
+          .mat-mdc-form-field {
+            font-size: 14px;
+            width: 100%;
+          }
+          
+          td, th {
+            width: 25%;
+          }
+    }
+    
+}

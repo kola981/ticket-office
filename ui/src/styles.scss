@@ -1,0 +1,12 @@
+@import './styles/theme';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'FontAwesome';
+}

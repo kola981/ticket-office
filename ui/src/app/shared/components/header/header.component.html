@@ -1,0 +1,13 @@
+<div class="logo-pane light-theme">
+    <div class="logo">
+        <mat-icon>festival</mat-icon>
+    </div>
+    <p class="name">{{ appName | uppercase }}</p>
+</div>
+<div class="button-pane" *ngIf="!this.auth.isAuthenticated()">
+    <button class="button-icon-text" (click)="this.login()"><mat-icon>account_circle</mat-icon>{{ loginText | titlecase }}</button>
+</div>
+<div class="button-pane" *ngIf="this.auth.isAuthenticated()">
+    <div class="user">{{ this.auth.user?.name }}</div>
+    <button class="button-icon-text" (click)="this.logout()"><mat-icon>logout</mat-icon>{{ logoutText | titlecase }}</button>
+</div>

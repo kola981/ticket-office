@@ -1,0 +1,55 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/mixins.scss";
+
+:host {
+    
+    .card {
+        @include all-around-shadow;
+        @include flex-centered-space-between;
+
+        margin: 2% 15%;
+        padding: 5px 10px;
+        border: 0.5px solid $primary100;
+        border-radius: 10px;
+        height: 140px;
+
+        .title-picture {
+            @include flex-column-center;
+            width: 20%;
+
+            .picture {
+                border: 0.5px solid $primary50;
+                border-radius: 2px;
+            }
+        }
+
+        .date-description {
+            @include flex-column-center;
+            width: 46%;
+
+            .date {
+                @include flex-inline-center;
+                font-size: 0.8em;
+                color: $lightblack;
+                margin-bottom: 2%;
+
+                mat-icon {
+                    font-size: 20px;
+                }
+            }
+
+            .description {
+                padding: 0 5px;
+                text-align: justify;
+                text-indent: 5%;
+                font-size: 0.8em;
+                line-height: 150%;
+            }
+        }
+
+        .controls {
+            @include flex-space-evenly;
+            width: 20%;
+        } 
+    }
+}

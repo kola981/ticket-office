@@ -1,0 +1,72 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/mixins.scss";
+
+:host {
+    @include flex-centered-space-between;
+    background-color: $primary500;
+    height: 75px;
+    color: $whitegrey;
+
+    .logo-pane {
+        @include flex-centered;
+
+        .logo {
+            @include flex-centered;
+            border-radius: 50%;
+            border: 3px solid $whitegrey;
+            width: 40px;
+            height: 40px;
+            margin-left: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-right: 2rem;
+    
+            fa-icon {
+                margin-left: 0.1rem;
+            }
+        }
+
+        .name {
+            font-size: large;
+            margin-top: 10px;
+        }
+    }
+
+    .button-pane {
+        @include flex-centered;
+        margin-right: 2rem;
+        font-size: 24px;
+        text-align: center;
+        
+        .button-icon-text {
+            background: none;
+            padding: 0.1rem 1rem;
+            width: 100%;
+            background: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            border: 1px solid $lightblack;
+            border-radius: 0.3rem;
+            color: $whitegrey;
+
+            mat-icon {
+                margin-right: 5px;
+            }
+
+            &:hover {
+                color: $whiteroselight;
+            }
+        
+            &:active {
+                color: $whiterose;
+            }
+            
+            &:focus {
+                color: $whiterose;
+                border-color: $whiterose;
+            }
+        }
+
+    }
+}
