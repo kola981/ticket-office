@@ -1,0 +1,16 @@
+
+<div class="search-section">
+    <mat-form-field class="search" appearance="outline">
+        <mat-label>Enter event title or pick a date</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>event</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<div *ngIf="!this.isEmptyEventList()" class="events">
+    <to-event-list [events]="eventList"></to-event-list>
+</div>

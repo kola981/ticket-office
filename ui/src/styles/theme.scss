@@ -1,0 +1,182 @@
+@import './functions/theme-generator.scss';
+@import '@angular/material/theming';
+@include mat-core();
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-redbrown: (
+    50 : #e9e5e4,
+    100 : #c7bfbb,
+    200 : #a2948e,
+    300 : #7d6961,
+    400 : #61483f,
+    500 : #45281d,
+    600 : #3e241a,
+    700 : #361e15,
+    800 : #2e1811,
+    900 : #1f0f0a,
+    A100 : #ff7e5e,
+    A200 : #ff562b,
+    A400 : #f73100,
+    A700 : #de2c00,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-skyblue: (
+    50 : #eef6fb,
+    100 : #d4e9f4,
+    200 : #b8dbed,
+    300 : #9bcde6,
+    400 : #85c2e0,
+    500 : #70b7db,
+    600 : #68b0d7,
+    700 : #5da7d2,
+    800 : #539fcd,
+    900 : #4190c4,
+    A100 : #ffffff,
+    A200 : #e3f3ff,
+    A400 : #b0dfff,
+    A700 : #96d4ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-bluegrey: (
+    50 : #eaeff2,
+    100 : #cbd7dd,
+    200 : #a8bcc7,
+    300 : #85a1b1,
+    400 : #6a8da0,
+    500 : #50798f,
+    600 : #497187,
+    700 : #40667c,
+    800 : #375c72,
+    900 : #274960,
+    A100 : #a6daff,
+    A200 : #73c4ff,
+    A400 : #40afff,
+    A700 : #26a4ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-lightorange: (
+    50 : #fef3e7,
+    100 : #fce2c2,
+    200 : #facf99,
+    300 : #f8bc70,
+    400 : #f7ad52,
+    500 : #f59f33,
+    600 : #f4972e,
+    700 : #f28d27,
+    800 : #f08320,
+    900 : #ee7214,
+    A100 : #ffffff,
+    A200 : #fff2ea,
+    A400 : #ffd3b7,
+    A700 : #ffc49d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-lightgreen: (
+    50 : #ecf8ef,
+    100 : #d0edd7,
+    200 : #b1e1bc,
+    300 : #92d4a1,
+    400 : #7acb8d,
+    500 : #63c279,
+    600 : #5bbc71,
+    700 : #51b466,
+    800 : #47ac5c,
+    900 : #359f49,
+    A100 : #eaffed,
+    A200 : #b7ffc3,
+    A400 : #84ff99,
+    A700 : #6aff84,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$to-palette-primary: mat-palette($md-redbrown, 300);
+$to-palette-accent: mat-palette($md-lightorange, 500, 800, 200);
+$to-palette-warn: mat-palette($md-skyblue);
+
+$to-custom-scheme: mat-light-theme($to-palette-primary, $to-palette-accent, $to-palette-warn);
+
+@include angular-material-theme($to-custom-scheme);

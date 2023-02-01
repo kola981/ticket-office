@@ -1,0 +1,42 @@
+<div class="container">
+    <h3 class="title">Login</h3>
+    <form class="form-group">
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>Email</mat-label>
+            <input matInput [value]="email" (input)="email=$any($event).target.value">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [value]="password" (input)="password=$any($event).target.value">
+        </mat-form-field>
+
+        <div class="button-pane">
+            <button mat-raised-button color="accent" (click)="this.login()">Login</button>
+            <button mat-raised-button color="accent" (click)="this.cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<!-- <form (ngSubmit)="onSubmit(loginForm.value)" class="group" #loginForm="ngForm">
+    
+    <label for="email">Email</label>
+    <input id="email" type="email" required #email="ngModel" name="email" emailRegexValidation ngModel>
+
+    <div *ngIf="email.invalid &&  (loginForm.submitted || password.touched)">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['emailInvalid']">Email is invalid</div>
+    </div>
+
+
+    <label for="password">Password</label>
+    <input id="password" type="password" required ngModel #password="ngModel" name="password">
+    
+    <div *ngIf="password.invalid && (loginForm.submitted || password.touched)">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+    </div>
+
+    <app-button [buttonType]="buttonType" #sb>{{ buttonText }}</app-button>
+    
+    <p>If you do not have an account you may<a routerLink="/register">Registration</a></p>
+</form> -->

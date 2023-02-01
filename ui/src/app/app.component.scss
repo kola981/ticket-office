@@ -1,0 +1,18 @@
+:host {
+
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .content {
+        margin-top: 75px;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+
+:host {
+    @include flex-centered;
+    height: inherit;
+
+    .container {
+        @include flex-column-center;
+        @include all-around-shadow;
+
+        // margin-top: -20%;
+        height: 40%;
+        width: 30%;
+        border: 1px solid $primary200;
+        border-radius: 5px;
+
+        .title {
+            color: $lightblack;
+            font-size: x-large;
+            margin-top: 5%;
+        }
+
+        .form-group {
+            @include flex-column-center;
+        }
+
+        .field {
+            margin-top: 10%;
+        }
+
+        .button-pane {
+            @include pane;
+            width: 200px;
+
+            text-align: center;
+            margin-top: 10%;
+
+
+            button {
+                // background-color: $primary200;
+                width: 80px;
+                font-size: 24px;
+                
+            }
+        }       
+    }
+}

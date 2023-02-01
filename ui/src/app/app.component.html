@@ -1,2 +1,14 @@
-App
-<router-outlet></router-outlet>
+<to-header class="header"></to-header>
+<section class="content">
+  <router-outlet></router-outlet>
+</section>
+
+<!-- <section class="form-container" *ngIf="!this.auth.isAuthenticated()">
+  <app-login></app-login>
+</section> -->
+<!-- <section class="container" *ngIf="this.auth.isAuthenticated()">
+  <app-breadcrumbs></app-breadcrumbs>
+  <app-course-list></app-course-list>
+</section> -->
+<!-- <app-footer></app-footer> -->
+

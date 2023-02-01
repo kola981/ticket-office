@@ -1,0 +1,64 @@
+@import './colors.scss';
+
+@mixin all-around-shadow($color: $primary50, $spread-radius: 1px, $blur-radius: 0, $x: 0, $y: 0) {
+    box-shadow: $x$y$blur-radius$spread-radius$color;
+}
+
+@mixin container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+  
+@mixin pane {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+}
+
+@mixin form-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-centered-space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-dir-row-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin flex-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin flex-space-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-inline-center {
+    display: flex;
+    align-items: center;
+}
