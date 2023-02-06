@@ -1,1 +1,15 @@
-<p>ticket works!</p>
+<div class="card">
+    <div class="info">
+        <div class="event">
+            <p>Name: {{ eventName }}</p>
+        </div>
+        <div class="place">
+            <p>Type {{ ticket.category }}</p>
+            <p>Place: {{ ticket.place }}</p>
+        </div>
+    </div>
+    <div class="controls">
+        <button mat-raised-button color="accent" (click)="this.onClick()">PRINT</button>
+        <button mat-raised-button color="accent" (click)="this.onCancel()">CANCEL</button>
+    </div>
+</div>
