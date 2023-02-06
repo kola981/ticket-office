@@ -37,6 +37,7 @@ yarn-error.log
 testem.log
 /typings
 **/*.lock
+ui/package-lock.json
 
 # System files
 .DS_Store
