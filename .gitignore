@@ -1,11 +1,13 @@
 .idea
 *.iml
 
-.gradle
 *.lock
-
+.gradle/
+ui/.gradle/
+backend/.gradle/
 gradle/**
-.gradle/**
+
 gradlew
-build/**
-.idea/**
+build/
+
+backend/src/main/resources/static/
