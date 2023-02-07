@@ -1,6 +1,7 @@
 <ng-container *ngIf="!this.isEmptyList()" class="events">
+    <h3 class="title">Your purchased tickets are shown below:</h3>
     <div *ngFor="let ticket of tickets; trackBy: ticketTrackBy">
-        <to-ticket [ticket]="ticket"></to-ticket>
+        <to-ticket [ticket]="ticket" [eventDate]="event.date!" [eventName]="event.title!"></to-ticket>
     </div>
 </ng-container>
 

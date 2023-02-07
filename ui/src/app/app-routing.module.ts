@@ -16,7 +16,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'bookings/event/:id',
+    path: 'bookings/event/:eventId',
     component: TicketListComponent
 
   },

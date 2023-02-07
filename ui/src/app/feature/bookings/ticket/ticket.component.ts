@@ -8,5 +8,14 @@ import { Ticket } from 'src/app/shared/model/ticket';
 })
 export class TicketComponent {
   @Input() ticket: Ticket;
+  @Input() eventDate: string;
+  @Input() eventName: string;
 
+  onClick(): void {
+    console.log(this.ticket.id);
+  }
+
+  onCancel(): void {
+    console.log(`Ticket ${this.ticket.id} cancelled`);
+  }
 }
