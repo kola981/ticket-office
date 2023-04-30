@@ -3,6 +3,7 @@ package org.kolesnyk.repository;
 
 import org.kolesnyk.dao.EventDao;
 import org.kolesnyk.dao.UserDao;
+import org.kolesnyk.dto.UserRole;
 import org.kolesnyk.model.Event;
 import org.kolesnyk.model.User;
 import org.kolesnyk.model.impl.EventImpl;
@@ -75,11 +76,22 @@ public class StorageFiller {
     }
 
     private void parseUser(String[] item) {
+        UserRole role = getRole(item[4]);
+
         User user = new UserImpl();
         user.setId(Generator.generateUserId());
         user.setEmail(item[1]);
         user.setName(item[2]);
+        user.setPassword(item[3]);
+        user.setRole(role);
+
         userDao.save(user);
+    }
+
+    private UserRole getRole(String role) {
+        return "admin".equals(role.toLowerCase()) ? UserRole.ADMIN :
+                "user".equals(role.toLowerCase()) ? UserRole.USER
+                : null;
     }
 
 }

@@ -1,4 +1,5 @@
-user;abc@abc.com;Vasja Pupkin
-user;google@google.com;The Google
+user;abc@abc.com;Vasja Pupkin;;
+user;google@google.com;The Google;;
+user;user123@email.com;Andrej;123;admin
 event;The best concert;2021-12-12 19:00
 event;Exciting java for android classes;2021-12-31 16:00

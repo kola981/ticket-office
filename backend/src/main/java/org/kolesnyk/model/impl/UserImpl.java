@@ -1,5 +1,6 @@
 package org.kolesnyk.model.impl;
 
+import org.kolesnyk.dto.UserRole;
 import org.kolesnyk.model.User;
 
 public class UserImpl implements User {
@@ -7,6 +8,8 @@ public class UserImpl implements User {
     private Long id;
     private String name;
     private String email;
+    private String password;
+    private UserRole role;
 
     @Override
     public long getId() {
@@ -36,6 +39,26 @@ public class UserImpl implements User {
     @Override
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public UserRole getRole() {
+        return this.role;
+    }
+
+    @Override
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
